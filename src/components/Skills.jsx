@@ -1,0 +1,6 @@
+import {useState} from 'react';
+import {Code2,Network,Search,Plug} from 'lucide-react';
+import Section,{pill} from './Section';
+import {skillGroups} from '../data/skills';
+const icons=[Code2,Network,Search,Plug];
+export default function Skills(){const [filter,setFilter]=useState('All');return <Section id="skills" number="03" label="Technical skills" title={<>The pieces behind<br/><span className="text-accent">the experience.</span></>} description="Tools I use to connect ideas, information and interfaces."><div className="mb-7 flex flex-wrap gap-2" aria-label="Filter skills">{['All',...skillGroups.map(x=>x[0])].map(x=><button key={x} aria-pressed={filter===x} onClick={()=>setFilter(x)} className={`rounded-full border px-4 py-2 text-xs ${filter===x?'border-accent bg-accent text-canvas':'border-line text-muted hover:text-accent'}`}>{x}</button>)}</div><div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{skillGroups.filter(x=>filter==='All'||x[0]===filter).map(([name,...items])=>{const Icon=icons[skillGroups.findIndex(x=>x[0]===name)];return <article key={name} className="rounded-xl border border-line bg-surface p-6"><Icon size={29} className="text-accent"/><h3 className="my-5 text-xl font-semibold">{name}</h3><div className="flex flex-wrap gap-2">{items.map(x=><span key={x} className={pill}>{x}</span>)}</div></article>})}</div></Section>}

@@ -1,0 +1,4 @@
+import {ArrowUpRight} from 'lucide-react';
+import Section,{secondary} from './Section';
+import {profile} from '../data/profile';
+export default function About(){return <Section id="about" number="01" label="About me" title={<>Curiosity first.<br/><span className="text-accent">Clarity always.</span></>}><div className="max-w-3xl space-y-5 text-base leading-8 text-muted"><p>I enjoy making complex information easier to work with. My projects connect AI workflows, document retrieval and simple web interfaces.</p><p>I'm a final-year M.Sc. Information Technology student at {profile.school}, Ahmedabad. I'm looking for an entry-level opportunity to contribute, learn and keep building.</p><a href={profile.github} target="_blank" rel="noreferrer" className={secondary}>Find me on GitHub <ArrowUpRight size={15}/></a></div></Section>}

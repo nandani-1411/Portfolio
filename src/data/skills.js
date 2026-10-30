@@ -1,0 +1,1 @@
+export const skillGroups = [['Build','Python','FastAPI','REST APIs','React'],['Orchestrate','LangChain','LangGraph','MCP','Prompt engineering'],['Retrieve','RAG','ChromaDB','Local embeddings','Semantic search'],['Connect','PostgreSQL','Supabase','GitHub Actions','Brevo','Groq','OpenRouter','Tavily']];

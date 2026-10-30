@@ -1,0 +1,31 @@
+@import "tailwindcss";
+@theme {
+  --color-canvas: #101c1b;
+  --color-surface: #192b28;
+  --color-ink: #e6f2e9;
+  --color-muted: #a1b6ab;
+  --color-accent: #a4efac;
+  --color-line: #334740;
+  --font-sans: Arial, Helvetica, sans-serif;
+  --animate-orbit: orbit 22s linear infinite;
+  --animate-enter: enter .6s ease-out both;
+  @keyframes orbit { to { transform: rotate(360deg); } }
+  @keyframes enter { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+}
+@layer base {
+  html { scroll-behavior:smooth; scroll-padding-top:6rem; }
+  body { margin:0; background:var(--color-canvas); color:var(--color-ink); font-family:var(--font-sans); }
+  button, a { -webkit-tap-highlight-color:transparent; }
+  button { cursor:pointer; }
+  :focus-visible { outline:2px solid var(--color-accent); outline-offset:5px; }
+  ::selection { background:var(--color-accent); color:var(--color-canvas); }
+  dialog::backdrop { background:#06100dbb; backdrop-filter:blur(8px); }
+}
+[data-theme="light"] {
+  --color-canvas:#edf5ee; --color-surface:#ffffff; --color-ink:#143e2a;
+  --color-muted:#496d57; --color-accent:#176537; --color-line:#bccfc0;
+}
+@media(prefers-reduced-motion:reduce) {
+  html { scroll-behavior:auto; }
+  *,*::before,*::after { animation:none!important; transition:none!important; }
+}

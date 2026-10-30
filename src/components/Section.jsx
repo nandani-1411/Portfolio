@@ -1,0 +1,5 @@
+export function Eyebrow({children}) { return <div className="font-mono text-[11px] tracking-[.12em] text-accent uppercase">{children}</div>; }
+export default function Section({id,number,label,title,description,children,className=''}) { return <section id={id} className={`mx-auto max-w-7xl px-6 py-16 sm:px-10 lg:px-12 lg:py-20 ${className}`}><div className="mb-8 flex flex-col justify-between gap-5 sm:flex-row sm:items-end"><div><Eyebrow>{number} / {label}</Eyebrow><h2 className="mt-4 text-3xl leading-tight font-semibold tracking-tight sm:text-4xl">{title}</h2></div>{description&&<p className="max-w-sm text-sm leading-7 text-muted">{description}</p>}</div>{children}</section>; }
+export const pill='rounded border border-line px-2.5 py-1 text-[11px] text-muted';
+export const primary='inline-flex items-center justify-center gap-5 rounded-md bg-accent px-5 py-3 text-sm font-semibold text-canvas transition hover:-translate-y-0.5 hover:shadow-lg motion-reduce:transform-none';
+export const secondary='inline-flex items-center gap-3 border-b border-line py-2 text-sm transition hover:text-accent';

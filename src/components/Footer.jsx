@@ -1,0 +1,2 @@
+import {ArrowUp} from 'lucide-react';
+export default function Footer(){return <footer className="mx-auto flex max-w-7xl flex-wrap justify-between gap-5 px-6 py-7 text-[11px] text-muted sm:px-10 lg:px-12"><p>© {new Date().getFullYear()} Nandani Parmar</p><p className="hidden sm:block">Generative AI Developer · Ahmedabad, India</p><a href="#home" className="inline-flex items-center gap-2 hover:text-accent">Back to top <ArrowUp size={12}/></a></footer>}

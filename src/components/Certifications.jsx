@@ -1,0 +1,4 @@
+import {Award,ArrowUpRight} from 'lucide-react';
+import Section from './Section';
+import {certificates} from '../data/profile';
+export default function Certifications(){return <Section id="certifications" number="05" label="Certifications" title={<>Always <span className="text-accent">learning.</span></>} className="border-t border-line"><div>{certificates.map(x=><a key={x.id} href={`https://www.udemy.com/certificate/${x.id}/`} target="_blank" rel="noreferrer" className="flex items-center gap-5 border-b border-line py-6 transition hover:text-accent"><Award size={27} className="shrink-0 text-accent"/><div className="flex-1"><h3 className="text-base font-semibold sm:text-lg">{x.title}</h3><p className="mt-2 text-xs text-muted">{x.subtitle} · Udemy</p></div><span className="hidden text-xs sm:block">View credential</span><ArrowUpRight size={18}/></a>)}</div></Section>}

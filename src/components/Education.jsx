@@ -1,0 +1,4 @@
+import {GraduationCap,MapPin} from 'lucide-react';
+import Section from './Section';
+import {profile,education} from '../data/profile';
+export default function Education(){return <Section id="education" number="02" label="Education" title={<>A foundation for <span className="text-accent">building.</span></>} className="border-y border-line"><div className="grid gap-6 md:grid-cols-2">{education.map(x=><article key={x.degree} className="rounded-xl border border-line bg-surface p-7"><GraduationCap size={27} className="mb-6 text-accent"/><p className="font-mono text-xs text-accent">{x.years}</p><h3 className="mt-3 text-xl font-semibold">{x.degree}</h3><p className="mt-3 text-sm leading-7 text-muted">{profile.school}</p></article>)}</div><p className="mt-6 flex items-center gap-2 text-xs text-muted"><MapPin size={15}/>{profile.location}</p></Section>}
